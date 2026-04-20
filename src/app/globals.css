@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f6efe7;
+  --sand: #d8c2a7;
+  --ink: #2f2722;
+  --ink-soft: #5f5751;
+  --accent: #540f0d;
+  --evergreen: #3f5548;
+  --line: rgba(47, 39, 34, 0.15);
+  --line-strong: rgba(47, 39, 34, 0.4);
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-sans-main);
+  --font-serif: var(--font-serif-display);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans-main), Arial, Helvetica, sans-serif;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.font-serif {
+  font-family: var(--font-serif-display), Georgia, serif;
+}
