@@ -1,8 +1,8 @@
 /**
- * Imagery from `public/drive-download-20260420T223656Z-3-001/`.
+ * Shared editorial imagery from `public/boston colonial`.
  * HEIC files are omitted so they work reliably with `next/image` in browsers.
  */
-const DRIVE_FOLDER = "/drive-download-20260420T223656Z-3-001";
+const DRIVE_FOLDER = "/boston colonial";
 
 const DRIVE_DOWNLOAD_FILES = [
   "F8B9CC96-8708-4378-9F1C-78E57090D2B3.jpg",

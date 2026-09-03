@@ -46,19 +46,46 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <p className="mt-8 max-w-3xl text-lg leading-8 text-[var(--ink-soft)]">{project.fullDescription}</p>
       </FadeIn>
 
-      <div className="mt-12 grid gap-5 sm:grid-cols-2">
-        {project.gallery.map((image, index) => (
-          <FadeIn key={image} delay={index * 0.03}>
-            <Image
-              src={image}
-              alt={`${project.title} gallery image ${index + 1}`}
-              width={1400}
-              height={1000}
-              className={`w-full rounded-2xl object-cover ${index % 3 === 0 ? "h-[460px]" : "h-[360px]"}`}
-            />
-          </FadeIn>
-        ))}
-      </div>
+      {project.gallerySections ? (
+        <div className="mt-16 space-y-16">
+          {project.gallerySections.map((section) => (
+            <section key={section.title}>
+              <FadeIn>
+                <p className="mb-6 text-xs uppercase tracking-[0.2em] text-[var(--accent)]">{section.title}</p>
+              </FadeIn>
+              <div className="grid gap-5 sm:grid-cols-2">
+                {section.images.map((image, index) => (
+                  <FadeIn key={image} delay={index * 0.04}>
+                    <Image
+                      src={image}
+                      alt={`${project.title} — ${section.title}`}
+                      width={1400}
+                      height={1000}
+                      className={`w-full rounded-2xl object-cover ${
+                        section.images.length === 1 || index === 0 ? "h-[460px]" : "h-[360px]"
+                      } ${section.images.length === 1 ? "sm:col-span-2" : ""}`}
+                    />
+                  </FadeIn>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      ) : (
+        <div className="mt-12 grid gap-5 sm:grid-cols-2">
+          {project.gallery.map((image, index) => (
+            <FadeIn key={image} delay={index * 0.03}>
+              <Image
+                src={image}
+                alt={`${project.title} gallery image ${index + 1}`}
+                width={1400}
+                height={1000}
+                className={`w-full rounded-2xl object-cover ${index % 3 === 0 ? "h-[460px]" : "h-[360px]"}`}
+              />
+            </FadeIn>
+          ))}
+        </div>
+      )}
     </Container>
   );
 }

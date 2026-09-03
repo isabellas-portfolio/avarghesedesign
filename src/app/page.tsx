@@ -128,14 +128,14 @@ export default function Home() {
         </FadeIn>
 
         <FadeIn>
-          <section className="rounded-3xl bg-[var(--evergreen)] px-8 py-16 text-[var(--bg)] md:px-14">
+          <section className="w-fit max-w-full rounded-3xl bg-[var(--accent)] px-8 py-10 text-[var(--bg)] md:px-12">
             <p className="text-xs uppercase tracking-[0.2em] text-[var(--sand)]">Complimentary Consultation</p>
-            <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-tight sm:text-5xl">
+            <h2 className="mt-3 max-w-md font-serif text-2xl leading-tight sm:text-3xl">
               Begin With A Free 30 Minute Consultation To Discuss Your Dream Home
             </h2>
             <Link
               href="/consultation"
-              className="mt-10 inline-flex rounded-full bg-[var(--bg)] px-8 py-3 text-xs uppercase tracking-[0.15em] text-[var(--ink)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white"
+              className="mt-6 inline-flex rounded-full bg-[var(--bg)] px-8 py-3 text-xs uppercase tracking-[0.15em] text-[var(--ink)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white"
             >
               Book now
             </Link>
