@@ -9,7 +9,7 @@ export default function AboutPage() {
   return (
     <Container className="py-20">
       <FadeIn>
-        <h1 className="font-serif text-4xl text-[var(--ink)] sm:text-5xl">A Varghese Design</h1>
+        <h1 className="font-serif text-4xl text-[var(--accent)] sm:text-5xl">A Varghese Design</h1>
       </FadeIn>
 
       <div className="mt-14 grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">

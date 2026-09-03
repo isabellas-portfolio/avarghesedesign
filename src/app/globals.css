@@ -6,6 +6,7 @@
   --ink: #2f2722;
   --ink-soft: #5f5751;
   --accent: #540f0d;
+  --accent-dark: #3a0a09;
   --evergreen: #3f5548;
   --line: rgba(47, 39, 34, 0.15);
   --line-strong: rgba(47, 39, 34, 0.4);
@@ -31,4 +32,13 @@ button {
 
 .font-serif {
   font-family: var(--font-serif-display), Georgia, serif;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    color: var(--accent);
+    font-weight: 600;
+  }
 }

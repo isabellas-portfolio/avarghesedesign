@@ -7,7 +7,7 @@ export default function PortfolioPage() {
   return (
     <Container className="py-20">
       <FadeIn>
-        <h1 className="font-serif text-4xl text-[var(--ink)] sm:text-5xl">Portfolio</h1>
+        <h1 className="font-serif text-4xl text-[var(--accent)] sm:text-5xl">Portfolio</h1>
       </FadeIn>
 
       <div className="mt-12 grid gap-8">

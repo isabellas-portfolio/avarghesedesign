@@ -35,14 +35,18 @@ export function SiteHeader() {
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="font-serif text-lg tracking-[0.18em] text-[var(--ink)]"
+          className="font-serif text-lg font-semibold tracking-[0.18em] text-[var(--accent)] transition-colors duration-300 hover:text-[var(--accent-dark)] active:text-[var(--accent-dark)]"
         >
           A VARGHESE DESIGN
         </Link>
 
-        <nav className="hidden items-center gap-8 text-xs uppercase tracking-[0.14em] text-[var(--ink-soft)] md:flex">
+        <nav className="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)] md:flex">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="transition-colors duration-300 hover:text-[var(--accent)]">
+            <Link
+              key={item.href}
+              href={item.href}
+              className="transition-colors duration-300 hover:text-[var(--accent-dark)] active:text-[var(--accent-dark)]"
+            >
               {item.label}
             </Link>
           ))}
@@ -50,7 +54,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[var(--ink)] md:hidden"
+          className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)] transition-colors duration-300 hover:text-[var(--accent-dark)] active:text-[var(--accent-dark)] md:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((prev) => !prev)}
@@ -58,13 +62,15 @@ export function SiteHeader() {
           <span>{open ? "Close" : "Menu"}</span>
           <span className="relative flex h-3.5 w-5 flex-col justify-between" aria-hidden="true">
             <span
-              className={`block h-px w-full bg-[var(--ink)] transition-transform duration-300 ${
+              className={`block h-px w-full bg-current transition-transform duration-300 ${
                 open ? "translate-y-[6.5px] rotate-45" : ""
               }`}
             />
-            <span className={`block h-px w-full bg-[var(--ink)] transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
             <span
-              className={`block h-px w-full bg-[var(--ink)] transition-transform duration-300 ${
+              className={`block h-px w-full bg-current transition-opacity duration-300 ${open ? "opacity-0" : ""}`}
+            />
+            <span
+              className={`block h-px w-full bg-current transition-transform duration-300 ${
                 open ? "-translate-y-[6.5px] -rotate-45" : ""
               }`}
             />
@@ -89,7 +95,7 @@ export function SiteHeader() {
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="block py-3 text-sm uppercase tracking-[0.18em] text-[var(--ink)] transition-colors duration-300 hover:text-[var(--accent)]"
+                      className="block py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent)] transition-colors duration-300 hover:text-[var(--accent-dark)] active:text-[var(--accent-dark)]"
                     >
                       {item.label}
                     </Link>

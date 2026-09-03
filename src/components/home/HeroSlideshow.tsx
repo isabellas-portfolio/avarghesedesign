@@ -33,7 +33,12 @@ const HERO_SLIDES = [
   {
     src: "/dallas king/3Z4A3750.jpg",
     alt: "Sage green reading nook and window seat",
-    position: "center center",
+    position: "center 60%",
+  },
+  {
+    src: "/dallas king/3Z4A3563.jpg",
+    alt: "Moody study with desk and fireplace",
+    position: "center 60%",
   },
 ] as const;
 

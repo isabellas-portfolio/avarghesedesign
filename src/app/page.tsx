@@ -10,20 +10,20 @@ export default function Home() {
 
   return (
     <div>
-      <section className="relative h-[70vh] min-h-[620px] overflow-hidden border-b border-[var(--line)]">
+      <section className="relative h-[70vh] min-h-[620px] overflow-hidden">
         <HeroSlideshow />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-        <Container className="absolute inset-x-0 bottom-18">
-          <FadeIn>
-            <Link
-              href="/consultation"
-              className="inline-flex rounded-full border border-white/80 px-8 py-3 text-xs uppercase tracking-[0.15em] text-white transition-colors duration-300 hover:bg-white hover:text-[var(--ink)]"
-            >
-              Book Consultation
-            </Link>
-          </FadeIn>
-        </Container>
       </section>
+
+      <div className="border-b border-[var(--line)] py-5 text-center">
+        <Link
+          href="https://www.instagram.com/avarghesedesign"
+          target="_blank"
+          rel="noreferrer"
+          className="text-xs uppercase tracking-[0.18em] font-medium text-[var(--accent)] underline underline-offset-4 decoration-[var(--accent)]/50 transition-opacity duration-300 hover:opacity-70"
+        >
+          Instagram
+        </Link>
+      </div>
 
       <Container className="py-24">
         <FadeIn>
