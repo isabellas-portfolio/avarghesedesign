@@ -90,13 +90,8 @@ export function ConsultationForm() {
       ref={formRef}
       action={formAction}
       encType="multipart/form-data"
-      className="space-y-6 rounded-3xl border border-[var(--line)] bg-white/80 p-9"
+      className="space-y-6"
     >
-      <h3 className="font-serif text-4xl">Inquire</h3>
-      <p className="text-sm text-[var(--ink-soft)]">
-        Share your project details and we&apos;ll follow up to schedule your complimentary consultation.
-      </p>
-
       {state.message ? (
         <p
           role="status"

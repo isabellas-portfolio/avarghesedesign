@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { siteDriveImageryDeck } from "@/data/drive-download-images";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
 
 export default function AboutPage() {
@@ -10,11 +9,7 @@ export default function AboutPage() {
   return (
     <Container className="py-20">
       <FadeIn>
-        <SectionHeading
-          eyebrow="About The Studio"
-          title="A Varghese Design"
-          description="A Varghese Design is a residential interior design firm based in Boston, MA designing homes nationwide."
-        />
+        <h1 className="font-serif text-4xl text-[var(--ink)] sm:text-5xl">A Varghese Design</h1>
       </FadeIn>
 
       <div className="mt-14 grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
@@ -49,7 +44,7 @@ export default function AboutPage() {
             alt="A Varghese Design studio portrait"
             width={1200}
             height={1500}
-            className="h-full min-h-[560px] w-full rounded-3xl object-cover"
+            className="h-full min-h-[560px] w-full object-cover"
           />
         </FadeIn>
       </div>

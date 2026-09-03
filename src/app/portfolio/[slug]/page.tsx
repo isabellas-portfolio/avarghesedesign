@@ -38,11 +38,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <Container className="py-16">
       <FadeIn>
-        <p className="text-xs uppercase tracking-[0.2em] text-[var(--accent)]">Project Portfolio</p>
-        <h1 className="mt-4 max-w-4xl font-serif text-5xl leading-tight sm:text-6xl">{project.title}</h1>
-        <p className="mt-4 text-sm uppercase tracking-[0.14em] text-[var(--ink-soft)]">
-          {project.location} · {project.category}
-        </p>
+        <h1 className="mt-0 max-w-4xl font-serif text-5xl leading-tight sm:text-6xl">{project.title}</h1>
+        <p className="mt-4 text-sm uppercase tracking-[0.14em] text-[var(--ink-soft)]">{project.location}</p>
         <p className="mt-8 max-w-3xl text-lg leading-8 text-[var(--ink-soft)]">{project.fullDescription}</p>
       </FadeIn>
 
@@ -51,7 +48,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           {project.gallerySections.map((section) => (
             <section key={section.title}>
               <FadeIn>
-                <p className="mb-6 text-xs uppercase tracking-[0.2em] text-[var(--accent)]">{section.title}</p>
+                <p className="mb-5 text-xs uppercase tracking-[0.18em] text-[var(--ink-soft)]">{section.title}</p>
               </FadeIn>
               <div className="grid gap-5 sm:grid-cols-2">
                 {section.images.map((image, index) => (
