@@ -11,9 +11,19 @@ const HERO_SLIDES = [
     position: "center 78%",
   },
   {
+    src: "/pic rotation/IMG_1299.jpg",
+    alt: "Living room with green loveseat and black coffee table",
+    position: "center center",
+  },
+  {
     src: "/dallas king/3Z4A3413.jpg",
     alt: "Kitchen with marble island and range",
     position: "center center",
+  },
+  {
+    src: "/pic rotation/IMG_0045.jpg",
+    alt: "Kitchen marble counter with flowers and pastry stand",
+    position: "center 40%",
   },
   {
     src: "/malden charmer/JoyelleWest_260330_007.jpg",
@@ -21,14 +31,29 @@ const HERO_SLIDES = [
     position: "center center",
   },
   {
+    src: "/pic rotation/IMG_7867.jpg",
+    alt: "Sunlit living room with vaulted ceiling and rocking chair",
+    position: "center 35%",
+  },
+  {
     src: "/dallas king/3Z4A3788.jpg",
     alt: "Curved staircase and entry foyer",
+    position: "center 40%",
+  },
+  {
+    src: "/pic rotation/IMG_1300.jpg",
+    alt: "Entry hall looking into a bright living room",
     position: "center 40%",
   },
   {
     src: "/dallas king/3Z4A3592.jpg",
     alt: "Round dining table with chandelier",
     position: "center center",
+  },
+  {
+    src: "/pic rotation/IMG_7882.jpg",
+    alt: "Entryway with staircase and dining room beyond",
+    position: "center 60%",
   },
   {
     src: "/dallas king/3Z4A3750.jpg",
