@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     "A Varghese Design is a residential interior design firm based in Boston, MA designing homes nationwide.",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/logo.png", type: "image/png" },
+      { url: "/favicon-32.png?v=2", type: "image/png", sizes: "32x32" },
+      { url: "/logo.png?v=2", type: "image/png" },
     ],
-    shortcut: "/favicon.ico",
-    apple: [{ url: "/logo.png", type: "image/png" }],
+    shortcut: "/favicon-32.png?v=2",
+    apple: [{ url: "/logo.png?v=2", type: "image/png" }],
   },
 };
 
