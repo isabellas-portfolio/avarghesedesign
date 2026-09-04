@@ -15,14 +15,22 @@ export default function Home() {
       </section>
 
       <div className="border-b border-[var(--line)] py-5 text-center">
-        <Link
-          href="https://www.instagram.com/avarghesedesign"
-          target="_blank"
-          rel="noreferrer"
-          className="text-xs uppercase tracking-[0.18em] font-medium text-[var(--accent)] underline underline-offset-4 decoration-[var(--accent)]/50 transition-opacity duration-300 hover:opacity-70"
-        >
-          Instagram
-        </Link>
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          <Link
+            href="https://www.instagram.com/avarghesedesign"
+            target="_blank"
+            rel="noreferrer"
+            className="text-xs uppercase tracking-[0.18em] font-medium text-[var(--accent)] underline underline-offset-4 decoration-[var(--accent)]/50 transition-opacity duration-300 hover:opacity-70"
+          >
+            Instagram
+          </Link>
+          <Link
+            href="/consultation"
+            className="text-xs uppercase tracking-[0.18em] font-medium text-[var(--accent)] underline underline-offset-4 decoration-[var(--accent)]/50 transition-opacity duration-300 hover:opacity-70"
+          >
+            Free Consultation
+          </Link>
+        </div>
       </div>
 
       <Container className="py-24">
