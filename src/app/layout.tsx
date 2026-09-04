@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   title: "A Varghese Design",
   description:
     "A Varghese Design is a residential interior design firm based in Boston, MA designing homes nationwide.",
+  icons: {
+    icon: [{ url: "/logo.png", type: "image/png" }],
+    apple: [{ url: "/logo.png", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({

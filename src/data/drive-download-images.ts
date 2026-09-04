@@ -5,10 +5,11 @@
 const DRIVE_FOLDER = "/boston colonial";
 
 const DRIVE_DOWNLOAD_FILES = [
-  "F8B9CC96-8708-4378-9F1C-78E57090D2B3.jpg",
-  "IMG_0105.PNG",
-  "IMG_2594.jpeg",
-  "IMG_2595.jpeg",
+  "IMG_5966.jpeg",
+  "IMG_5969.jpg",
+  "IMG_6255.jpg",
+  "IMG_3869.jpg",
+  "7D946835-AE55-4023-9FB5-31785470DDAF.JPG",
 ] as const;
 
 export const driveDownloadPaths = DRIVE_DOWNLOAD_FILES.map((name) => `${DRIVE_FOLDER}/${name}`);

@@ -6,7 +6,7 @@ import { HeroSlideshow } from "@/components/home/HeroSlideshow";
 import { projects } from "@/data/projects";
 
 export default function Home() {
-  const featuredProjects = projects.slice(0, 3);
+  const featuredProjects = projects.filter((p) => !p.hidden).slice(0, 3);
 
   return (
     <div>
@@ -31,7 +31,7 @@ export default function Home() {
             <div className="grid gap-6 md:grid-cols-3">
               {featuredProjects.map((project) => (
                 <Link key={project.slug} href={`/portfolio/${project.slug}`} className="group block">
-                  <div className="overflow-hidden">
+                  <div className="relative overflow-hidden">
                     <Image
                       src={project.coverImage}
                       alt={project.title}
@@ -39,10 +39,11 @@ export default function Home() {
                       height={760}
                       className="h-80 w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                  </div>
-                  <div className="pt-4">
-                    <h3 className="font-serif text-3xl">{project.title}</h3>
-                    <p className="mt-1 text-sm text-[var(--ink-soft)]">{project.location}</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                    <div className="absolute bottom-5 left-5 right-5 text-white">
+                      <p className="text-xs uppercase tracking-[0.16em] text-neutral-200">{project.location}</p>
+                      <h3 className="mt-2 font-serif text-2xl !text-white sm:text-3xl">{project.title}</h3>
+                    </div>
                   </div>
                 </Link>
               ))}

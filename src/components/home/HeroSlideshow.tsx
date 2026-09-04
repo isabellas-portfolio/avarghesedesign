@@ -42,7 +42,7 @@ const HERO_SLIDES = [
   },
 ] as const;
 
-const INTERVAL_MS = 5600;
+const INTERVAL_MS = 3500;
 const FADE_SECONDS = 1.6;
 
 export function HeroSlideshow() {

@@ -3,6 +3,7 @@ import { driveImageryForProject } from "@/data/drive-download-images";
 const H = "/dallas king";
 const M = "/malden charmer";
 const B = "/boston colonial";
+const T = "/Tennessee Historic Charmer";
 
 /** Dallas King — remaining unique photos, grouped as a walk through the house. */
 const dallasKingSections = [
@@ -82,23 +83,53 @@ const maldenCharmerSections = [
 
 const maldenCharmerGallery = maldenCharmerSections.flatMap((section) => [...section.images]);
 
-/** Boston Colonial — photography from `public/boston colonial` (HEIC omitted for web). */
+/** Massachusetts Contemporary Cottage — photography from `public/boston colonial` (HEIC omitted). */
 const bostonColonialSections = [
   {
-    title: "Living Room",
-    images: [`${B}/F8B9CC96-8708-4378-9F1C-78E57090D2B3.jpg`],
+    title: "Primary Bedroom",
+    images: [`${B}/IMG_5966.jpeg`, `${B}/IMG_5969.jpg`],
   },
   {
-    title: "Kitchen",
-    images: [`${B}/IMG_2594.jpeg`, `${B}/IMG_2595.jpeg`],
+    title: "Details",
+    images: [
+      `${B}/7D946835-AE55-4023-9FB5-31785470DDAF.JPG`,
+      `${B}/IMG_6255.jpg`,
+    ],
   },
   {
-    title: "Bath",
-    images: [`${B}/IMG_0105.PNG`],
+    title: "Nursery",
+    images: [`${B}/IMG_3869.jpg`],
   },
 ] as const;
 
 const bostonColonialGallery = bostonColonialSections.flatMap((section) => [...section.images]);
+
+/** Tennessee Historic Row — photography from `public/Tennessee Historic Charmer` (HEIC omitted). */
+const tennesseeHistoricSections = [
+  {
+    title: "Living Room",
+    images: [`${T}/IMG_8230.jpg`, `${T}/IMG_5629.jpeg`],
+  },
+  {
+    title: "Reading Nook",
+    images: [`${T}/IMG_8375.jpg`, `${T}/IMG_8249.jpg`],
+  },
+  {
+    title: "Study",
+    images: [`${T}/IMG_8214.jpg`, `${T}/IMG_8195.jpg`],
+  },
+  {
+    title: "Kitchen",
+    images: [
+      `${T}/IMG_8270.jpg`,
+      `${T}/IMG_8323.jpg`,
+      `${T}/IMG_8308.jpg`,
+      `${T}/IMG_8300.jpg`,
+    ],
+  },
+] as const;
+
+const tennesseeHistoricGallery = tennesseeHistoricSections.flatMap((section) => [...section.images]);
 
 export type GallerySection = {
   title: string;
@@ -116,12 +147,13 @@ export type Project = {
   gallerySections?: GallerySection[];
   previewDescription: string;
   fullDescription: string;
+  hidden?: boolean;
 };
 
 export const projects: Project[] = [
   {
     slug: "dallas-king-project",
-    title: "Dallas King Project",
+    title: "Traditional Bones Meets Modern Charm",
     location: "Dallas, TX",
     category: "Full Service Design",
     coverImage: `${H}/3Z4A3377-Edit.jpg`,
@@ -134,23 +166,41 @@ export const projects: Project[] = [
     previewDescription:
       "Layered textures and soft contrast define this Dallas residence, balancing polished details with spaces built for daily living.",
     fullDescription:
-      "The Dallas King Project pairs tailored furnishings with natural materials to create a warm and elevated atmosphere. Each room was designed to feel curated yet lived-in, with bespoke details that bring depth and character over time.",
+      "Traditional Bones Meets Modern Charm pairs tailored furnishings with natural materials to create a warm and elevated atmosphere. Each room was designed to feel curated yet lived-in, with bespoke details that bring depth and character over time.",
   },
   {
-    slug: "virginia-modern-farm-house",
-    ...driveImageryForProject("virginia-modern-farm-house"),
-    title: "Virginia Modern Farm House",
-    location: "Northern Virginia",
-    category: "Renovation + Furnishing",
+    slug: "boston-colonial",
+    title: "Massachusetts Contemporary Cottage",
+    location: "Southborough, MA",
+    category: "Full Home Styling",
+    coverImage: `${B}/7D946835-AE55-4023-9FB5-31785470DDAF.JPG`,
+    previewImages: [`${B}/IMG_5969.jpg`, `${B}/IMG_6255.jpg`],
+    gallery: bostonColonialGallery,
+    gallerySections: bostonColonialSections.map((section) => ({
+      title: section.title,
+      images: [...section.images],
+    })),
     previewDescription:
-      "A clean-lined farmhouse story where rustic finishes meet modern silhouettes and a gentle, tonal palette.",
+      "A refreshed contemporary cottage with grounding color, refined millwork moments, and inviting family-first rooms.",
     fullDescription:
-      "This project reimagines a classic farmhouse footprint with restrained, modern forms. We layered matte finishes, warm wood tones, and handcrafted accents to preserve charm while elevating functionality across every room.",
+      "This Massachusetts Contemporary Cottage focused on thoughtful updates that feel both elevated and familiar. We shaped each room with layered neutrals, heritage forms, and strategic pops of color for depth and personality.",
+  },
+  {
+    slug: "wellesley-contemporary-cottage",
+    hidden: true,
+    ...driveImageryForProject("wellesley-contemporary-cottage"),
+    title: "Garden Escape",
+    location: "Wellesley, MA",
+    category: "New Build Interiors",
+    previewDescription:
+      "A contemporary cottage language with organic textures, creamy layers, and subtle sculptural moments.",
+    fullDescription:
+      "Garden Escape was designed around light, proportion, and comfort. We curated furniture and finishes that support everyday function while delivering a quietly luxurious atmosphere.",
   },
   {
     slug: "century-old-malden-charmer",
-    title: "Century Old Malden Charmer",
-    location: "Malden, MA",
+    title: "Century Old Roots",
+    location: "Boston, MA",
     category: "Historic Home Refresh",
     coverImage: `${M}/JoyelleWest_260330_001.jpg`,
     previewImages: [`${M}/JoyelleWest_260330_007.jpg`, `${M}/JoyelleWest_260330_011.jpg`],
@@ -165,46 +215,33 @@ export const projects: Project[] = [
       "For this century-old property, we emphasized preservation and refinement. Rich textiles, updated lighting, and custom millwork bridge timeless details with a fresh, livable rhythm for a young family.",
   },
   {
-    slug: "wellesley-contemporary-cottage",
-    ...driveImageryForProject("wellesley-contemporary-cottage"),
-    title: "Wellesley Contemporary Cottage",
-    location: "Wellesley, MA",
-    category: "New Build Interiors",
+    slug: "virginia-modern-farm-house",
+    hidden: true,
+    ...driveImageryForProject("virginia-modern-farm-house"),
+    title: "DC Relaxed Living",
+    location: "Chantilly, VA",
+    category: "Renovation + Furnishing",
     previewDescription:
-      "A contemporary cottage language with organic textures, creamy layers, and subtle sculptural moments.",
+      "A clean-lined living story where rustic finishes meet modern silhouettes and a gentle, tonal palette.",
     fullDescription:
-      "The Wellesley Contemporary Cottage was designed around light, proportion, and comfort. We curated furniture and finishes that support everyday function while delivering a quietly luxurious atmosphere.",
+      "DC Relaxed Living reimagines a classic farmhouse footprint with restrained, modern forms. We layered matte finishes, warm wood tones, and handcrafted accents to preserve charm while elevating functionality across every room.",
   },
   {
-    slug: "boston-colonial",
-    title: "Boston Colonial",
-    location: "Boston, MA",
-    category: "Full Home Styling",
-    coverImage: `${B}/IMG_2594.jpeg`,
-    previewImages: [
-      `${B}/F8B9CC96-8708-4378-9F1C-78E57090D2B3.jpg`,
-      `${B}/IMG_0105.PNG`,
-    ],
-    gallery: bostonColonialGallery,
-    gallerySections: bostonColonialSections.map((section) => ({
+    slug: "dallas-traditional-roots",
+    title: "Tennessee Historic Row",
+    location: "Chattanooga, TN",
+    category: "Furnishing + Styling",
+    coverImage: `${T}/IMG_8230.jpg`,
+    previewImages: [`${T}/IMG_8270.jpg`, `${T}/IMG_8214.jpg`],
+    gallery: tennesseeHistoricGallery,
+    gallerySections: tennesseeHistoricSections.map((section) => ({
       title: section.title,
       images: [...section.images],
     })),
     previewDescription:
-      "A refreshed colonial with grounding color, refined millwork moments, and inviting family-first rooms.",
+      "Historic references reimagined through tonal restraint, texture play, and a warm editorial point of view.",
     fullDescription:
-      "This Boston Colonial project focused on thoughtful updates that feel both elevated and familiar. We shaped each room with layered neutrals, heritage forms, and strategic pops of color for depth and personality.",
-  },
-  {
-    slug: "dallas-traditional-roots",
-    ...driveImageryForProject("dallas-traditional-roots"),
-    title: "Dallas Traditional Roots",
-    location: "Dallas, TX",
-    category: "Furnishing + Styling",
-    previewDescription:
-      "Traditional references reimagined through tonal restraint, texture play, and a warm editorial point of view.",
-    fullDescription:
-      "Dallas Traditional Roots blends classic architecture with modern ease. The design language relies on timeless profiles, tactile fabrics, and careful sourcing that gives each room a sense of story and permanence.",
+      "Tennessee Historic Row blends classic architecture with modern ease. The design language relies on timeless profiles, tactile fabrics, and careful sourcing that gives each room a sense of story and permanence.",
   },
 ];
 

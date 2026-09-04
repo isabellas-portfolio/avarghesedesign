@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
@@ -9,7 +10,7 @@ const navItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
+  { href: "/portfolio", label: "Selected Projects" },
   { href: "/consultation", label: "Consultation" },
 ];
 
@@ -31,13 +32,21 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[color:var(--bg)/92] backdrop-blur-md">
-      <Container className="flex items-center justify-between py-5">
+      <Container className="flex items-center justify-between py-3">
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="font-serif text-lg font-semibold tracking-[0.18em] text-[var(--accent)] transition-colors duration-300 hover:text-[var(--accent-dark)] active:text-[var(--accent-dark)]"
+          className="relative block h-16 w-auto shrink-0 transition-opacity duration-300 hover:opacity-80 sm:h-20"
+          aria-label="A Varghese Design — Home"
         >
-          A VARGHESE DESIGN
+          <Image
+            src="/logo.png"
+            alt="A Varghese Design"
+            width={586}
+            height={654}
+            priority
+            className="h-full w-auto object-contain"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)] md:flex">
